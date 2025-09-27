@@ -1,0 +1,6 @@
+com\example\crud\controller\ProductController.class
+com\example\crud\controller\WebController.class
+com\example\crud\entity\Product.class
+com\example\crud\SpringBootCrudAppApplication.class
+com\example\crud\repository\ProductRepository.class
+com\example\crud\service\ProductService.class
