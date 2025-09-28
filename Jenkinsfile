@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = "springboot-crud-app:${env.BUILD_NUMBER}"
+        DOCKER_IMAGE = "sanoj619/crud-product:${env.BUILD_NUMBER}"
         KUBE_DEPLOYMENT = "springboot-crud-app"
         SLACK_WEBHOOK_URL = credentials('slack-webhook-url')
     }
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
             }
         }
         stage('Docker Build & Push') {
@@ -28,8 +28,8 @@ pipeline {
         }
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f k8s/deployment.yaml'
-                sh 'kubectl apply -f k8s/service.yaml'
+                bat 'kubectl apply -f k8s\\deployment.yaml'
+                bat 'kubectl apply -f k8s\\service.yaml'
             }
         }
     }

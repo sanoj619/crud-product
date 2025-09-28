@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: springboot-crud-app
-        image: springboot-crud-app:latest
+        image: sanoj619/crud-product:latest
         ports:
         - containerPort: 8082
         env:
