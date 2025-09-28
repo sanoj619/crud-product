@@ -69,6 +69,7 @@ This is a simple Spring Boot application that demonstrates CRUD (Create, Read, U
     }
   ]
   ```
+  
 
 - **Update a product**
   ```
